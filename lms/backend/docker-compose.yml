@@ -1,0 +1,33 @@
+services:
+  api:
+    restart: always
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    image: backend_1
+    volumes:
+      - ./backend:/app:cached
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+  # client:
+  #   restart: always
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.client
+  #   volumes:
+  #     - ./frontend/lms/src:/app/src:cached
+  #   image: lms-client
+  #   ports:
+  #     - "${FRONTEND_PORT}:80"
+
+  postgres-db:
+    image: postgres
+    environment:
+      POSTGRES_DB: "${PGDATABASE}"
+      POSTGRES_USER: "${PGUSER}"
+      POSTGRES_PASSWORD: "${PGPASSWORD}"
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      - ./create_tables.sql:/docker-entrypoint-initdb.d/create_tables.sql
+    ports:
+      - "${PGPORT}:${PGPORT}"
