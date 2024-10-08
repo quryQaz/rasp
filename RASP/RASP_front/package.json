@@ -1,0 +1,72 @@
+{
+  "name": "lms",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@ionic/react": "^5.6.3",
+    "@ionic/react-router": "^5.6.3",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^13.5.0",
+    "axios": "^0.27.2",
+    "cross-env": "^7.0.3",
+    "date-fns": "^3.6.0",
+    "mobx": "^6.6.1",
+    "mobx-react": "^7.5.2",
+    "react": "^18.1.0",
+    "react-datepicker": "^6.9.0",
+    "react-dom": "^18.1.0",
+    "react-minimal-side-navigation": "^1.9.2",
+    "react-native": "^0.70.6",
+    "react-native-web": "^0.18.10",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "react-scrollbar": "^0.5.6",
+    "react-select": "^5.8.0",
+    "styled-components": "^6.1.13",
+    "tslib": "^2.7.0",
+    "typescript-plugin-styled-components": "^2.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server",
+    "start": "node node_modules/cross-env/src/bin/cross-env.js node_modules/webpack-dev-server/bin/webpack-dev-server.js --port 9000 --mode development --open --hot --config webpack.config.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-router-dom": "^5.3.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.3",
+    "webpack-notifier": "^1.15.0"
+  }
+}

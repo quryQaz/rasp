@@ -1,0 +1,23 @@
+services:
+  rasp:
+    restart: always
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    image: backend_3
+    networks:
+      - mynet
+    volumes:
+      - ./backend:/app:cached
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+  tarantool:
+    image: tarantool/tarantool:latest
+    networks:
+      - mynet
+    ports:
+      - "3301:3301"
+
+networks:
+  mynet:
+    driver: bridge

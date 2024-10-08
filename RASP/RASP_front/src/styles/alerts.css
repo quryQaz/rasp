@@ -1,0 +1,13 @@
+.alerts {
+  width: 100%; /* <--- width to 0 */
+  overflow: hidden;
+  transform: translateX(-280px);
+  transition: 0.5s;
+}
+.alerts-active {
+  width: 100%; /* <--- set width percentage will not ease */
+  background-color: black;
+  transform: translateX(0px);
+  transition: 0.5s;
+  background-color: rgba(20,20,20,0.6);
+}

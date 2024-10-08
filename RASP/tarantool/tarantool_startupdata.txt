@@ -1,0 +1,53 @@
+logs = box.schema.space.create('logs')
+logs:format({
+{name = 'id', type = 'unsigned'},
+{name = 'endpoint', type = 'string'},
+{name = 'type', type = 'string'},
+{name = 'logs', type = 'string'},
+{name = 'date', type = 'string'},
+{name = 'criticality', type = 'string'},
+})
+logs:create_index('primary', {
+type = 'tree',
+parts = {'id'}
+})
+
+box.space.logs:create_index('endpoint', {
+        type = 'tree',
+        parts = {'endpoint'},
+        unique = false
+        })
+
+box.space.logs.index.endpoint.unique = false
+
+box.space.logs:create_index('logs', {
+        type = 'tree',
+        parts = {'logs'},
+        unique = false
+        })
+
+box.space.logs.index.logs.unique = false
+
+box.space.logs:create_index('date', {
+        type = 'tree',
+        parts = {'date'},
+        unique = false
+        })
+
+box.space.logs.index.date.unique = false
+
+box.space.logs:create_index('criticality', {
+        type = 'tree',
+        parts = {'criticality'},
+        unique = false
+        })
+
+box.space.logs.index.criticality.unique = false
+
+box.space.logs:create_index('type', {
+        type = 'tree',
+        parts = {'type'},
+        unique = false
+        })
+
+box.space.logs.index.type.unique = false
